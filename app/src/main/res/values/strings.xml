@@ -4,5 +4,10 @@
     <string name="title_activity_man">ManActivity</string>
     <string name="title_activity_woman">WomanActivity</string>
     <string name="MenActivity">MAN</string>
-    <string name="WomenActivity">Woman</string>
+    <string name="WomenActivity">WOMAN</string>
+    <string name="TextViewMainActivity">Please, click one button according to your sex:</string>
+    <color name="Grey">#808080</color>  //Grey color
+    <color name="Black">#000000</color>  //Black color
+    <color name="Silver">#C0C0C0</color>  Silver Color
+
 </resources>
