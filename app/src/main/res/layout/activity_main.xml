@@ -5,24 +5,26 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grey">
+    android:background="@color/White">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
         android:gravity="center_vertical"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.963">
 
-        <Button
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/buttonAbove"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
@@ -33,9 +35,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonAbove" />
+            app:layout_constraintTop_toBottomOf="match_parent"
+            android:src=""/>
 
-        <Button
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/buttonDown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

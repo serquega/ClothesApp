@@ -6,8 +6,8 @@
     <string name="MenActivity">MAN</string>
     <string name="WomenActivity">WOMAN</string>
     <string name="TextViewMainActivity">Please, click one button according to your sex:</string>
-    <color name="Grey">#808080</color>  //Grey color
-    <color name="Black">#000000</color>  //Black color
-    <color name="Silver">#C0C0C0</color>  Silver Color
-
+    <color name="Grey">#808080</color>
+    <color name="Black">#000000</color>
+    <color name="Silver">#C0C0C0</color>
+    <color name="White">#FFFFFF</color>
 </resources>
