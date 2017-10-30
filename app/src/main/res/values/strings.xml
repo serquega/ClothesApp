@@ -3,8 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_man">ManActivity</string>
     <string name="title_activity_woman">WomanActivity</string>
-    <string name="MenActivity">MAN</string>
-    <string name="WomenActivity">WOMAN</string>
+    <string name="MenActivity">Man</string>
+    <string name="WomenActivity">Woman</string>
     <string name="TextViewMainActivity">Please, click one button according to your sex:</string>
     <color name="Grey">#808080</color>
     <color name="Black">#000000</color>

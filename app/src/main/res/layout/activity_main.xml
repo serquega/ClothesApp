@@ -33,7 +33,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:backgroundTint="@color/White"
-            android:src="@drawable/man"/>
+            android:src="@drawable/man_icon"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/buttonDown"
@@ -44,7 +44,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:backgroundTint="@color/White"
-            android:src="@drawable/girl"/>
+            android:src="@drawable/girl_icon"/>
 
     </LinearLayout>
 
