@@ -9,22 +9,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Button;
 
 import com.example.sergi.clothesapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonAbove;
-    private Button buttonDown;
+    private FloatingActionButton buttonAbove;
+    private FloatingActionButton buttonDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonAbove=(Button) findViewById(R.id.buttonAbove);
-        buttonDown=(Button) findViewById(R.id.buttonDown);
+        buttonAbove=(FloatingActionButton) findViewById(R.id.buttonAbove);
+        buttonDown=(FloatingActionButton) findViewById(R.id.buttonDown);
 
         buttonAbove.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
