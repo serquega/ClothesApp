@@ -5,7 +5,10 @@
     <string name="title_activity_woman">WomanActivity</string>
     <string name="MenActivity">Man</string>
     <string name="WomenActivity">Woman</string>
-    <string name="TextViewMainActivity">Please, click one button according to your sex:</string>
+    <string name="textViewEmail">E-mail:</string>
+    <string name="textViewpassword">Password:</string>
+    <string name="signUp">You don not have an account yet? Click here to SIG UP</string>
+    <string name="signIn">SIG IN</string>
     <color name="Grey">#808080</color>
     <color name="Black">#000000</color>
     <color name="Silver">#C0C0C0</color>

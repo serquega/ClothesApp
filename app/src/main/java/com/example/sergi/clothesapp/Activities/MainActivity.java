@@ -24,20 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonAbove=(FloatingActionButton) findViewById(R.id.buttonAbove);
-        buttonDown=(FloatingActionButton) findViewById(R.id.buttonDown);
-
-        buttonAbove.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(ManActivity.class);
-            }
-        });
-
-        buttonDown.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(WomanActivity.class);
-            }
-        });
     }
 
     public void startActivity(Class<?> startActivity){
