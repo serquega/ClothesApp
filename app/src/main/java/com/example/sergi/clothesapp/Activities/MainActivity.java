@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 token=new StringTokenizer(line,",");
                 bufferedReader.readLine();
             }
+
+            bufferedReader.close();
         }catch(IOException e){
             e.printStackTrace();
         }
