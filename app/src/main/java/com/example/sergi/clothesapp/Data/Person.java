@@ -12,6 +12,8 @@ public class Person {
     private String name;
     private String surname;
     private String dni;
+    private String email;
+    private String password;
     private int height;
     private boolean likeScarfHot;
     private boolean likeScarfWarm;
@@ -28,6 +30,8 @@ public class Person {
         this.name=name;
         this.surname=surname;
         this.dni=dni;
+        this.email=email;
+        this.password=password;
         this.height=height;
         this.likeScarfHot=likeScarfHot;
         this.likeScarfWarm=likeScarfWarm;
