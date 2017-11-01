@@ -9,6 +9,7 @@ package com.example.sergi.clothesapp.Data;
  */
 public class Person {
 
+    private String sex;             //m or f depends on your sex
     private String name;
     private String surname;
     private String dni;
@@ -27,6 +28,7 @@ public class Person {
      *Constructor of the class to inicialize the variables
      */
     public Person(){
+        this.sex=sex;
         this.name=name;
         this.surname=surname;
         this.dni=dni;

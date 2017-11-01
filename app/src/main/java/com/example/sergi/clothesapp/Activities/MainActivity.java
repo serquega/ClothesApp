@@ -1,9 +1,11 @@
 package com.example.sergi.clothesapp.Activities;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -16,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.sergi.clothesapp.Data.Man;
+import com.example.sergi.clothesapp.Data.Person;
 import com.example.sergi.clothesapp.R;
 
 import org.w3c.dom.Text;
@@ -57,34 +61,44 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //When the user clicks on the button SIGN IN, this method checks if the user is registered
     public void checkData(Editable eMail, Editable passWord){
         try {
+            AlertDialog.Builder builder=null;
             BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/com/example/sergi/clothesapp/Files/data.txt"));
             String line=null;
             boolean found=false;
             StringTokenizer token;
             line=bufferedReader.readLine();
-            while(line!=null){
-                token=new StringTokenizer(line,",");
-                String name=token.nextToken();
-                String surname=token.nextToken();
-                String dni=token.nextToken();
-                String email=token.nextToken();
-                String password=token.nextToken();
+            while(line!=null && !found) {
+                token = new StringTokenizer(line, ",");
+                String sex = token.nextToken();
+                if (sex.equalsIgnoreCase("m")){
+                    String name = token.nextToken();
+                    String surname = token.nextToken();
+                    String dni = token.nextToken();
+                    String email = token.nextToken();
+                    String password = token.nextToken();
+                    int height;
+                    boolean likeScarfHot;
+                    boolean likeScarfWarm;
 
-                if(email.equals(eMail.toString())&& password.equals(passWord.toString())) {
-                    found=true;
-                    //startActivity();
-                }else
-                    line=bufferedReader.readLine();
+                    if (email.equals(eMail.toString()) && password.equals(passWord.toString())) {
+                        found = true;
+                        //startActivity();
+                    } else
+                        builder = new AlertDialog.Builder(this);
+                    builder.setTitle("Warning!").setMessage("This user is not registered");
+                }
+                line=bufferedReader.readLine();
             }
-
             bufferedReader.close();
         }catch(IOException e){
             e.printStackTrace();
         }
     }
 
+    //Method for starting an activity
     public void startActivity(Class<?> startActivity){
         Intent intent = new Intent(this, startActivity);
         startActivity(intent);
