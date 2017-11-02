@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/clothesappicon"
+        android:icon="@mipmap/clothes"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/clothesappicon"
+        android:roundIcon="@mipmap/clothes"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

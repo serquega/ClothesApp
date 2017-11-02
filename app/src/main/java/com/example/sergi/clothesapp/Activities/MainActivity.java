@@ -28,6 +28,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 checkData(editTextEmail.getText(), editTextPassword.getText());
             }
         });
-
     }
 
     //When the user clicks on the button SIGN IN, this method checks if the user is registered
@@ -79,16 +79,24 @@ public class MainActivity extends AppCompatActivity {
                     String dni = token.nextToken();
                     String email = token.nextToken();
                     String password = token.nextToken();
-                    int height;
-                    boolean likeScarfHot;
-                    boolean likeScarfWarm;
-
+                    int height=Integer.parseInt(token.nextToken());
+                    boolean likeScarfHot=Boolean.parseBoolean(token.nextToken());
+                    boolean likeScarfWarm=Boolean.parseBoolean(token.nextToken());
+                    boolean likeGloves=Boolean.parseBoolean(token.nextToken());
+                    boolean likeHat=Boolean.parseBoolean(token.nextToken());
+                    boolean likeTracksuit=Boolean.parseBoolean(token.nextToken());
+                    boolean likeAnorak=Boolean.parseBoolean(token.nextToken());
+                    boolean likeSuspenders=Boolean.parseBoolean(token.nextToken());
+                    boolean likeFlipFlops=Boolean.parseBoolean(token.nextToken());
                     if (email.equals(eMail.toString()) && password.equals(passWord.toString())) {
                         found = true;
                         //startActivity();
-                    } else
+                    } else {
                         builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Warning!").setMessage("This user is not registered");
+                        builder.setTitle("Warning!").setMessage("This user is not registered");
+                    }
+                }else if(sex.equalsIgnoreCase("f")){
+
                 }
                 line=bufferedReader.readLine();
             }

@@ -9,11 +9,13 @@ public class Woman extends Person {
     private boolean likeSkirt;
     private boolean likeLongSocks;
     private boolean likeBoots;
+    private boolean likeSwimSuit;
 
-    public Woman(boolean likeSkirt, boolean likeLongSocks, boolean likeBoots){
+    public Woman(boolean likeSkirt, boolean likeLongSocks, boolean likeBoots, boolean likeSwimSuit){
         super();
         this.likeSkirt=likeSkirt;
         this.likeLongSocks=likeLongSocks;
         this.likeBoots=likeBoots;
+        this.likeSwimSuit=likeSwimSuit;
     }
 }

@@ -23,6 +23,7 @@ public class Person {
     private boolean likeTracksuit;
     private boolean likeAnorak;
     private boolean likeSuspenders;
+    private boolean likeFlipFlops;
 
     /**
      *Constructor of the class to inicialize the variables
@@ -42,6 +43,8 @@ public class Person {
         this.likeTracksuit=likeTracksuit;
         this.likeAnorak=likeAnorak;
         this.likeSuspenders=likeSuspenders;
+        this.likeFlipFlops=likeFlipFlops;
+
     }
 
 }
