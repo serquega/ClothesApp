@@ -3,12 +3,14 @@ package com.example.sergi.clothesapp.Activities;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
@@ -28,7 +30,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textViewSignUp;
+    private ArrayList<Person> listPerson=new ArrayList<Person>();
+    AlertDialog.Builder builder=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +64,25 @@ public class MainActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkData(editTextEmail.getText(), editTextPassword.getText());
+                //checkData(editTextEmail.getText(), editTextPassword.getText());
+                checkUserData(editTextEmail.getText(), editTextPassword.getText());
             }
         });
     }
 
-    //When the user clicks on the button SIGN IN, this method checks if the user is registered
+
+    public void checkUserData(Editable eMail, Editable passWord){
+        for(int i=0; i<listPerson.size(); i++){
+            if(listPerson.get(i).getEmail().equals(eMail.toString()) && listPerson.get(i).getPassword().equals(passWord.toString()))
+                Log.i("my tag", "Hi");      //Remove it
+                //startActivity();
+            else
+                builder.setTitle("ATENTION").setMessage("E-mail or password incorrect");
+        }
+    }
+    //When the user clicks on the button SIGN IN, this method checks if the user is registered(file method)
     public void checkData(Editable eMail, Editable passWord){
         try {
-            AlertDialog.Builder builder=null;
             BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/com/example/sergi/clothesapp/Files/data.txt"));
             String line=null;
             boolean found=false;

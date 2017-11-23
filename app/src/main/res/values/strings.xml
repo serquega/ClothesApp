@@ -17,4 +17,5 @@
     <color name="Blue">#0000FF</color>
     <color name="Acqua">#00FFFF</color>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="textViewSignUp">Name:</string>
 </resources>
