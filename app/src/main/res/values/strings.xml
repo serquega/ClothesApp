@@ -17,5 +17,6 @@
     <color name="Blue">#0000FF</color>
     <color name="Acqua">#00FFFF</color>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="Welcome">Welcome to ClothesApp. Please fill all the gaps depending on your sex and what do you like:</string>
     <string name="textViewSignUp">Name:</string>
 </resources>

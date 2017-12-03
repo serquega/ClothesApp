@@ -11,8 +11,8 @@
         android:id="@+id/textViewSignUp"
         android:layout_width="wrap_content"
         android:layout_height="13dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="72dp"
         android:text="@string/textViewSignUp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,6 +22,16 @@
         android:layout_height="31dp"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="72dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Welcome"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
