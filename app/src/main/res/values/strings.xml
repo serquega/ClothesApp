@@ -20,4 +20,7 @@
     <string name="Welcome">Welcome to ClothesApp. Follow the next steps to make your own ClothesApp account:</string>
     <string name="textViewSignUp">Name:</string>
     <string name="open_weather_maps_app_id">11111</string>
+    <string name="textViewBoyOrGirl">You are a man or a woman?</string>
+    <string name="Man">Man</string>
+    <string name="Woman">Woman</string>
 </resources>

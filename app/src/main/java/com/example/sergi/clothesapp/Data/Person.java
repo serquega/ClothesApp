@@ -33,7 +33,7 @@ public class Person {
      *Constructor of the class to inicialize the variables
      */
     public Person(String sex, String name, String surname, String dni, String email, String password, int height, boolean likeScarfHot,
-                  boolean likeScarfWarm, boolean likeGloves, boolean likeHat, boolean likeTracksuit, boolean likeAnorak, boolean likeSuspenders,
+                  boolean likeScarfWarm, boolean likeGloves, boolean likeHat, boolean likeTrackSuit, boolean likeAnorak, boolean likeSuspenders,
                   boolean likeFlipFlops, boolean likeSwimSuit, boolean likeLeggins, boolean likeSuit){
         this.sex=sex;
         this.name=name;
@@ -46,7 +46,7 @@ public class Person {
         this.likeScarfWarm=likeScarfWarm;
         this.likeGloves=likeGloves;
         this.likeHat=likeHat;
-        this.likeTracksuit=likeTracksuit;
+        this.likeTracksuit=likeTrackSuit;
         this.likeAnorak=likeAnorak;
         this.likeSuspenders=likeSuspenders;
         this.likeFlipFlops=likeFlipFlops;
