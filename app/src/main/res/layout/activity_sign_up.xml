@@ -40,12 +40,12 @@
         android:id="@+id/fabMan"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="252dp"
+        android:layout_marginTop="284dp"
         android:src="@drawable/girl_icon"
         app:backgroundTint="@color/White"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="284dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewMan"
