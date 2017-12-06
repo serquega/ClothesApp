@@ -1,6 +1,7 @@
 package com.example.sergi.clothesapp.Activities;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.sergi.clothesapp.DATABASE.SQLiteDatabase;
 import com.example.sergi.clothesapp.Data.Man;
 import com.example.sergi.clothesapp.Data.Person;
 import com.example.sergi.clothesapp.R;
@@ -64,63 +66,20 @@ public class MainActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //checkData(editTextEmail.getText(), editTextPassword.getText());
-                checkUserData(editTextEmail.getText(), editTextPassword.getText());
+                SQLiteDatabase.checkUserDataInDatabase(editTextEmail.getText(), editTextPassword.getText());
+                checkUserDataInList(editTextEmail.getText(), editTextPassword.getText());
             }
         });
     }
 
 
-    public void checkUserData(Editable eMail, Editable passWord){
+    public void checkUserDataInList(Editable eMail, Editable passWord){
         for(int i=0; i<listPerson.size(); i++){
             if(listPerson.get(i).getEmail().equals(eMail.toString()) && listPerson.get(i).getPassword().equals(passWord.toString()))
                 Log.i("my tag", "Hi");      //Remove it
                 //startActivity();
             else
                 builder.setTitle("ATENTION").setMessage("E-mail or password incorrect");
-        }
-    }
-    //When the user clicks on the button SIGN IN, this method checks if the user is registered(file method)
-    public void checkData(Editable eMail, Editable passWord){
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/com/example/sergi/clothesapp/Files/data.txt"));
-            String line=null;
-            boolean found=false;
-            StringTokenizer token;
-            line=bufferedReader.readLine();
-            while(line!=null && !found) {
-                token = new StringTokenizer(line, ",");
-                String sex = token.nextToken();
-                if (sex.equalsIgnoreCase("m")){
-                    String name = token.nextToken();
-                    String surname = token.nextToken();
-                    String dni = token.nextToken();
-                    String email = token.nextToken();
-                    String password = token.nextToken();
-                    int height=Integer.parseInt(token.nextToken());
-                    boolean likeScarfHot=Boolean.parseBoolean(token.nextToken());
-                    boolean likeScarfWarm=Boolean.parseBoolean(token.nextToken());
-                    boolean likeGloves=Boolean.parseBoolean(token.nextToken());
-                    boolean likeHat=Boolean.parseBoolean(token.nextToken());
-                    boolean likeTracksuit=Boolean.parseBoolean(token.nextToken());
-                    boolean likeAnorak=Boolean.parseBoolean(token.nextToken());
-                    boolean likeSuspenders=Boolean.parseBoolean(token.nextToken());
-                    boolean likeFlipFlops=Boolean.parseBoolean(token.nextToken());
-                    if (email.equals(eMail.toString()) && password.equals(passWord.toString())) {
-                        found = true;
-                        //startActivity();
-                    } else {
-                        builder = new AlertDialog.Builder(this);
-                        builder.setTitle("Warning!").setMessage("This user is not registered");
-                    }
-                }else if(sex.equalsIgnoreCase("f")){
-
-                }
-                line=bufferedReader.readLine();
-            }
-            bufferedReader.close();
-        }catch(IOException e){
-            e.printStackTrace();
         }
     }
 
