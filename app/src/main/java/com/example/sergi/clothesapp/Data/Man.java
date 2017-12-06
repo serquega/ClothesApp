@@ -17,4 +17,11 @@ public class Man extends Person{
         this.likeThermalTshirt=likeThermalTshirt;
     }
 
+    public boolean isLikeThermalTshirt() {
+        return likeThermalTshirt;
+    }
+
+    public void setLikeThermalTshirt(boolean likeThermalTshirt) {
+        this.likeThermalTshirt = likeThermalTshirt;
+    }
 }

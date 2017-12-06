@@ -7,7 +7,6 @@
     <string name="WomenActivity">Woman</string>
     <string name="textViewEmail">E-mail:</string>
     <string name="textViewpassword">Password:</string>
-    <string name="other">You don not have an account yet? Click here to SIG UP</string>
     <string name="signUp"><u>You don not have an account yet? Click here to SIGN UP</u></string>
     <string name="signIn">SIG IN</string>
     <color name="Grey">#808080</color>

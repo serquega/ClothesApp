@@ -22,4 +22,36 @@ public class Woman extends Person {
         this.likeBoots=likeBoots;
         this.likeDress=likeDress;
     }
+
+    public boolean isLikeSkirt() {
+        return likeSkirt;
+    }
+
+    public void setLikeSkirt(boolean likeSkirt) {
+        this.likeSkirt = likeSkirt;
+    }
+
+    public boolean isLikeLongSocks() {
+        return likeLongSocks;
+    }
+
+    public void setLikeLongSocks(boolean likeLongSocks) {
+        this.likeLongSocks = likeLongSocks;
+    }
+
+    public boolean isLikeBoots() {
+        return likeBoots;
+    }
+
+    public void setLikeBoots(boolean likeBoots) {
+        this.likeBoots = likeBoots;
+    }
+
+    public boolean isLikeDress() {
+        return likeDress;
+    }
+
+    public void setLikeDress(boolean likeDress) {
+        this.likeDress = likeDress;
+    }
 }
