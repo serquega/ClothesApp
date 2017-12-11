@@ -76,10 +76,9 @@ public class MainActivity extends AppCompatActivity {
     public void checkUserDataInList(Editable eMail, Editable passWord){
         for(int i=0; i<listPerson.size(); i++){
             if(listPerson.get(i).getEmail().equals(eMail.toString()) && listPerson.get(i).getPassword().equals(passWord.toString()))
-                Log.i("my tag", "Hi");      //Remove it
-                //startActivity();
+                startActivity(WeatherActivity.class);
             else
-                builder.setTitle("ATENTION").setMessage("E-mail or password incorrect");
+                builder.setTitle("ERROR!").setMessage("E-mail or password incorrects");
         }
     }
 

@@ -6,9 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
-
-import com.example.sergi.clothesapp.Activities.SignUpActivity;
 import com.example.sergi.clothesapp.Activities.WeatherActivity;
 import com.example.sergi.clothesapp.Data.Man;
 import com.example.sergi.clothesapp.Data.Person;
@@ -20,6 +19,7 @@ import com.example.sergi.clothesapp.Data.Woman;
 
 public class SQLiteDatabase extends SQLiteOpenHelper {
 
+    static AlertDialog.Builder builder=null;
     private static final String TABLE_NAME = "Persons";
     private static final String DATABASE_NAME = "PersonsDatabase.db";
     private static final int DATABASE_VERSION = 1;
@@ -179,13 +179,15 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             do{
                 if(cursor.getString(5).equals(eMail.toString()) && cursor.getString(6).equals(passWord.toString()))
                     startActivity(WeatherActivity.class);
+                else
+                    builder.setTitle("ERROR!").setMessage("Your email or your password are incorrects");
             }while(cursor.moveToNext());
         }
     }
 
     //Method for starting an activity
     public static void startActivity(Class<?> startActivity){
-        Intent intent = new Intent(this, startActivity);
+        Intent intent = new Intent(, startActivity);
         startActivity(intent);
     }
 }
