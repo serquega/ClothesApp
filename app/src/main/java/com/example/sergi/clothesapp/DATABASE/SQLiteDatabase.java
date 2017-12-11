@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.text.Editable;
 
 import com.example.sergi.clothesapp.Activities.SignUpActivity;
+import com.example.sergi.clothesapp.Activities.WeatherActivity;
 import com.example.sergi.clothesapp.Data.Man;
 import com.example.sergi.clothesapp.Data.Person;
 import com.example.sergi.clothesapp.Data.Woman;
@@ -45,19 +46,12 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
 
     public void insertData2(Person person){
         String sqlMan = "INSERT INTO Persons (Sex, Name, Surname, DNI, Email, Password, Height, Scarf Hot, Scarf Warm, Gloves, Hat, Tracksuit, " +
-                "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Thermal T-Shirt) VALUES ("+person.getSex()+","+person.getName()+","+
-                person.getSurname()+","+person.getDni()+","+person.getEmail()+","+person.getPassword()+","+person.getHeight()+","+
-                person.isLikeScarfHot()+","+person.isLikeScarfWarm()+","+person.isLikeGloves()+";"+person.isLikeHat()+","+
-                person.isLikeTracksuit()+","+person.isLikeAnorak()+","+person.isLikeSuspenders()+","+person.isLikeFlipFlops()+","+
-                person.isLikeSwimSuit()+";"+person.isLikeLeggins()+","+person.isLikeSuit()+","+((Man) person).isLikeThermalTshirt()+")";
+                "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Thermal T-Shirt) VALUES (?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?" +
+                "?, ?, ?)";
 
         String sqlWoman = "INSERT INTO Persons (Sex, Name, Surname, DNI, Email, Password, Height, Scarf Hot, Scarf Warm, Gloves, Hat, Tracksuit, " +
-                "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Skirt, Long Socks, Boots, Dress) VALUES ("+person.getSex()+","+person.getName()+","+
-                person.getSurname()+","+person.getDni()+","+person.getEmail()+","+person.getPassword()+","+person.getHeight()+","+
-                person.isLikeScarfHot()+","+person.isLikeScarfWarm()+","+person.isLikeGloves()+";"+person.isLikeHat()+","+
-                person.isLikeTracksuit()+","+person.isLikeAnorak()+","+person.isLikeSuspenders()+","+person.isLikeFlipFlops()+","+
-                person.isLikeSwimSuit()+";"+person.isLikeLeggins()+","+person.isLikeSuit()+","+((Woman) person).isLikeSkirt()+","+
-                ((Woman) person).isLikeLongSocks()+","+((Woman) person).isLikeBoots()+","+((Woman) person).isLikeDress()+")";
+                "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Skirt, Long Socks, Boots, Dress) VALUES (?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?," +
+                " ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         db = this.getWritableDatabase();
         SQLiteStatement stmMan = db.compileStatement(sqlMan);
@@ -65,17 +59,50 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
 
         //Inserting the values
         if (person instanceof Man){
-            stmMan.bindString(0, person.getSex());
-            stmMan.bindString(1, person.getName());
-            stmMan.bindString(2, person.getSurname());
-            stmMan.bindString(3, person.getDni());
-            stmMan.bindString(4, person.getEmail());
-            stmMan.bindString(5, person.getPassword());
-            stmMan.bindString(6, String.valueOf(person.getHeight());
-            stmMan.bindString(7, Boolean.toString(person.isLikeScarfHot()));
-            stmMan.bindString(7, Boolean.toString(person.isLikeScarfWarm()));
+            stmMan.bindString(1, person.getSex());
+            stmMan.bindString(2, person.getName());
+            stmMan.bindString(3, person.getSurname());
+            stmMan.bindString(4, person.getDni());
+            stmMan.bindString(5, person.getEmail());
+            stmMan.bindString(6, person.getPassword());
+            stmMan.bindString(7, String.valueOf(person.getHeight()));
+            stmMan.bindString(8, Boolean.toString(person.isLikeScarfHot()));
+            stmMan.bindString(9, Boolean.toString(person.isLikeScarfWarm()));
+            stmMan.bindString(10, Boolean.toString(person.isLikeGloves()));
+            stmMan.bindString(11, Boolean.toString(person.isLikeHat()));
+            stmMan.bindString(12, Boolean.toString(person.isLikeTracksuit()));
+            stmMan.bindString(13, Boolean.toString(person.isLikeAnorak()));
+            stmMan.bindString(14, Boolean.toString(person.isLikeSuspenders()));
+            stmMan.bindString(15, Boolean.toString(person.isLikeFlipFlops()));
+            stmMan.bindString(16, Boolean.toString(person.isLikeSwimSuit()));
+            stmMan.bindString(17, Boolean.toString(person.isLikeLeggins()));
+            stmMan.bindString(18, Boolean.toString(person.isLikeSuit()));
+            stmMan.bindString(19, Boolean.toString(((Man)person).isLikeThermalTshirt()));
+            stmMan.executeInsert();
         }else{
-
+            stmWoman.bindString(1, person.getSex());
+            stmWoman.bindString(2, person.getName());
+            stmWoman.bindString(3, person.getSurname());
+            stmWoman.bindString(4, person.getDni());
+            stmWoman.bindString(5, person.getEmail());
+            stmWoman.bindString(6, person.getPassword());
+            stmWoman.bindString(7, String.valueOf(person.getHeight()));
+            stmWoman.bindString(8, Boolean.toString(person.isLikeScarfHot()));
+            stmWoman.bindString(9, Boolean.toString(person.isLikeScarfWarm()));
+            stmWoman.bindString(10, Boolean.toString(person.isLikeGloves()));
+            stmWoman.bindString(11, Boolean.toString(person.isLikeHat()));
+            stmWoman.bindString(12, Boolean.toString(person.isLikeTracksuit()));
+            stmWoman.bindString(13, Boolean.toString(person.isLikeAnorak()));
+            stmWoman.bindString(14, Boolean.toString(person.isLikeSuspenders()));
+            stmWoman.bindString(15, Boolean.toString(person.isLikeFlipFlops()));
+            stmWoman.bindString(16, Boolean.toString(person.isLikeSwimSuit()));
+            stmWoman.bindString(17, Boolean.toString(person.isLikeLeggins()));
+            stmWoman.bindString(18, Boolean.toString(person.isLikeSuit()));
+            stmWoman.bindString(19, Boolean.toString(((Woman) person).isLikeSkirt()));
+            stmWoman.bindString(20, Boolean.toString(((Woman) person).isLikeLongSocks()));
+            stmWoman.bindString(21, Boolean.toString(((Woman) person).isLikeBoots()));
+            stmWoman.bindString(22, Boolean.toString(((Woman) person).isLikeDress()));
+            stmWoman.executeInsert();
         }
     }
     public void insertData1(Person person){
@@ -150,15 +177,15 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                if(cursor.getString(4).equals(eMail.toString()) && cursor.getString(5).equals(passWord.toString()))
-
+                if(cursor.getString(5).equals(eMail.toString()) && cursor.getString(6).equals(passWord.toString()))
+                    startActivity(WeatherActivity.class);
             }while(cursor.moveToNext());
         }
     }
 
     //Method for starting an activity
-    public void startActivity(Class<?> startActivity){
-        Intent intent = new Intent(, startActivity);
+    public static void startActivity(Class<?> startActivity){
+        Intent intent = new Intent(this, startActivity);
         startActivity(intent);
     }
 }

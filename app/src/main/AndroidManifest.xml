@@ -24,10 +24,14 @@
             android:label="@string/MenActivity" />
         <activity
             android:name=".Activities.WomanActivity"
-            android:label="@string/WomenActivity"></activity>
+            android:label="@string/WomenActivity" />
         <activity
             android:name=".Activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.WeatherActivity"
+            android:label="@string/title_activity_weather"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

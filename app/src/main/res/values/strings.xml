@@ -22,4 +22,5 @@
     <string name="textViewBoyOrGirl">You are a man or a woman? Please, click on the right botton depending on your sex.</string>
     <string name="Man">Man</string>
     <string name="Woman">Woman</string>
+    <string name="title_activity_weather">WeatherActivity</string>
 </resources>
