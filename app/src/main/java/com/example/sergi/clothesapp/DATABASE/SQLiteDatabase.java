@@ -23,9 +23,9 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "Persons";
     private static final String DATABASE_NAME = "PersonsDatabase.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_CREATION = "create database"+ TABLE_NAME + " ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
-            "Surname VARCHAR(30)," + "DNI CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT," +
-            "Scarf Hot TINYINT(1)," + "Scarf Warm TINYTINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," +
+    private static final String DATABASE_CREATION = "create table "+TABLE_NAME+" ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
+            "Surname VARCHAR(30)," + "DNI CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT(3)," +
+            "Scarf Hot TINYINT(1)," + "Scarf Warm TINYINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," +
             "Anorak TINYINT(1)," + "Suspenders TINYINT(1)," + "Flip Flops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," +
             "Suit TINYINT(1)," + "Thermal T-Shirt TINYINT(1)," + "Skirt TINYINT(1)," + "Long Socks TINYINT(1)," + "Boots TINYINT(1)," +
             "Dress TINYINT(1) )";
@@ -186,8 +186,8 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
     }
 
     //Method for starting an activity
-    public static void startActivity(Class<?> startActivity){
-        Intent intent = new Intent(, startActivity);
-        startActivity(intent);
+    public void startActivity(Class<?> startActivity){
+        Intent inte = new Intent(this, startActivity);
+        startActivity(inte);
     }
 }
