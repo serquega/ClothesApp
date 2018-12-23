@@ -1,8 +1,9 @@
 package com.example.sergi.clothesapp.JSON;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 public class WeatherAPI {
 
@@ -11,7 +12,7 @@ public class WeatherAPI {
 
     public WeatherAPI() {
         final Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory
-                .create()).addCallAdapterFactory().create().build();
+                .create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
 
         apiCall = retrofit.create(APICall.class);
     }
