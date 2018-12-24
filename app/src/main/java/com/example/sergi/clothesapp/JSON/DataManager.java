@@ -1,7 +1,7 @@
 package com.example.sergi.clothesapp.JSON;
 
 import com.example.sergi.clothesapp.Data.WeatherResponse;
-import rx.Observable;
+import io.reactivex.Observable;
 
 public class DataManager {
 
