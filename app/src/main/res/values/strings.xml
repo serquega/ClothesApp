@@ -7,7 +7,7 @@
     <string name="WomenActivity">Woman</string>
     <string name="textViewEmail">E-mail:</string>
     <string name="textViewpassword">Password:</string>
-    <string name="signUp"><u>You don not have an account yet? Click here to SIGN UP</u></string>
+    <string name="signUp"><u>You do not have an account yet? Click here to SIGN UP</u></string>
     <string name="signIn">SIG IN</string>
     <color name="Grey">#808080</color>
     <color name="Black">#000000</color>
@@ -23,4 +23,5 @@
     <string name="Man">Man</string>
     <string name="Woman">Woman</string>
     <string name="title_activity_weather">WeatherActivity</string>
+    <string name="checkBoxMainActivity">Remember e-mail and password</string>
 </resources>
