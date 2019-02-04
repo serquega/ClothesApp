@@ -19,26 +19,28 @@ import com.example.sergi.clothesapp.Data.Woman;
 
 public class SQLiteDatabase extends SQLiteOpenHelper {
 
-    static AlertDialog.Builder builder=null;
     private static final String TABLE_NAME_MAN = "Man";
     private static final String TABLE_NAME_WOMAN = "Woman";
     private static final String DATABASE_NAME = "PeopleDatabase.db";
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_CREATION_MAN = "create table "+TABLE_NAME_MAN+" ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
-            "Surname VARCHAR(30)," + "DNI CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT(3)," +
-            "Scarf Hot TINYINT(1)," + "Scarf Warm TINYINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," +
-            "Anorak TINYINT(1)," + "Suspenders TINYINT(1)," + "Flip Flops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," +
-            "Suit TINYINT(1)," + "Thermal T-Shirt TINYINT(1) )";
+            "Surname VARCHAR(30)," + "DNI CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT(3)," + "Scarf Hot TINYINT(1)," +
+            "Scarf Warm TINYINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," + "Anorak TINYINT(1)," + "Suspenders TINYINT(1)," +
+            "Flip Flops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," + "Suit TINYINT(1)," + "Thermal T-Shirt TINYINT(1)" +
+            "Black TINYINT(1)," + "White TINYINT(1)," + "Yellow TINYINT(1)," + "Red TINYINT(1)," + "Blue TINYINT(1)," + "Green TINYINT(1)," +
+            "Soft Blue TINYINT(1)," + "Grey TINYINT(1)," + "Brown TINYINT(1)," + "Soft Brown TINYINT(1))," + "Soft Green TINYINT(1)" +")";
     private static final String DATABSE_CREATION_WOMAN = "create table "+TABLE_NAME_WOMAN+" ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
             "Surname VARCHAR(30)," + "DNI CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT(3)," +
             "Scarf Hot TINYINT(1)," + "Scarf Warm TINYINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," +
             "Anorak TINYINT(1)," + "Suspenders TINYINT(1)," + "Flip Flops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," +
             "Suit TINYINT(1)," + "Thermal T-Shirt TINYINT(1)," + "Skirt TINYINT(1)," + "Long Socks TINYINT(1)," + "Boots TINYINT(1)," +
-            "Dress TINYINT(1) )";
+            "Dress TINYINT(1)," + "Black TINYINT(1)," + "White TINYINT(1)," + "Yellow TINYINT(1)," + "Red TINYINT(1)," + "Blue TINYINT(1)," + "Green TINYINT(1)," +
+            "Soft Blue TINYINT(1)," + "Grey TINYINT(1)," + "Brown TINYINT(1)," + "Soft Brown TINYINT(1))," + "Soft Green TINYINT(1)" +")";
 
     public SQLiteDatabase(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
     @Override
     public void onCreate(android.database.sqlite.SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATION_MAN);
@@ -47,12 +49,12 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(android.database.sqlite.SQLiteDatabase db, int oldVersion, int newVersion) {
-        if(oldVersion < newVersion) {
+        /*if(oldVersion < newVersion) {
             onCreate(db);
-        }
+        }*/
     }
 
-    public void insertManData(Person person){
+    /*public void insertManData(Person person){
         String sqlMan = "INSERT INTO Persons (Sex, Name, Surname, DNI, Email, Password, Height, Scarf Hot, Scarf Warm, Gloves, Hat, Tracksuit, " +
                 "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Thermal T-Shirt) VALUES (?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?" +
                 "?, ?, ?)";
@@ -114,7 +116,7 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
         }
     }
 
-    public void insertWoManData(Person person){
+    public void insertWomanData(Person person){
         String sqlMan = "INSERT INTO Persons (Sex, Name, Surname, DNI, Email, Password, Height, Scarf Hot, Scarf Warm, Gloves, Hat, Tracksuit, " +
                 "Anorak, Suspenders, Flip Flops, Swimsuit, Leggins, Suit, Thermal T-Shirt) VALUES (?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?" +
                 "?, ?, ?)";
@@ -173,6 +175,6 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             stmWoman.bindString(21, Boolean.toString(((Woman) person).isLikeBoots()));
             stmWoman.bindString(22, Boolean.toString(((Woman) person).isLikeDress()));
             stmWoman.executeInsert();
-        }
+        }*/
     }
 }

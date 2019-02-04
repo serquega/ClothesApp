@@ -10,14 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.sergi.clothesapp.DATABASE.SQLiteDatabase;
-import com.example.sergi.clothesapp.Data.Person;
 import com.example.sergi.clothesapp.R;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textViewSignUp;
-    private ArrayList<Person> listPerson=new ArrayList<Person>();
+    private CheckBox checkBox;
     AlertDialog.Builder builder=null;
     private static String PREFS_KEY = "mypreferences";
 
@@ -33,10 +31,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkBox=(CheckBox) findViewById(R.id.checkBox);
         editTextEmail=(EditText) findViewById(R.id.editTextEmail);
         editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonSignIn=(Button) findViewById(R.id.buttonSignIn);
         textViewSignUp=(TextView) findViewById(R.id.textViewSignup);
+        String email = readPreferences(getBaseContext(), "user email");
+        String password = readPreferences(getBaseContext(), "password");
+        editTextEmail.setText(email);
+        editTextPassword.setText(password);
         textViewSignUp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -50,26 +53,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SQLiteDatabase admin = new SQLiteDatabase(getBaseContext());
                 android.database.sqlite.SQLiteDatabase db = admin.getWritableDatabase();
+                String queryMan = "SELECT * FROM Man";
 
-                String query = "SELECT * FROM Persons";
-
-                //
-                if() {
+                //Check the checkbox
+                if(checkBox.isChecked()) {
                     savePreferences(getBaseContext(),"user email", editTextEmail.getText().toString());
                     savePreferences(getBaseContext(), "password", editTextPassword.getText().toString());
                 }
 
                 //Runs Database
-                Cursor cursor = db.rawQuery(query, null);
+                Cursor cursorMan = db.rawQuery(queryMan, null);
 
                 //Search into de database
-                if(cursor.moveToFirst()){
+                if(cursorMan.moveToFirst()){
                     do{
-                        if(cursor.getString(5).equals(editTextEmail.getText().toString()) && cursor.getString(6).equals(editTextPassword.getText().toString()))
+                        if(cursorMan.getString(5).equals(editTextEmail.getText().toString()) && cursorMan.getString(6).equals(editTextPassword.getText().toString()))
                             startActivity(WeatherActivity.class);
                         else
-                            builder.setTitle("ERROR!").setMessage("Your email or your password are incorrects");
-                    }while(cursor.moveToNext());
+                            searchInWomanDatabase();
+                    }while(cursorMan.moveToNext());
                 }
             }
         });
@@ -94,5 +96,25 @@ public class MainActivity extends AppCompatActivity {
     public static String readPreferences(Context context, String keyPref) {
         SharedPreferences preferences = context.getSharedPreferences(PREFS_KEY, MODE_PRIVATE);
         return preferences.getString(keyPref, "");
+    }
+
+    //Search email and password in woman database
+    public void searchInWomanDatabase() {
+        SQLiteDatabase admin = new SQLiteDatabase(getBaseContext());
+        android.database.sqlite.SQLiteDatabase db = admin.getWritableDatabase();
+        String queryWoman = "SELECT * FROM Woman";
+
+        //Runs Database
+        Cursor cursorWoman = db.rawQuery(queryWoman, null);
+
+        //Search into de database
+        if(cursorWoman.moveToFirst()){
+            do{
+                if(cursorWoman.getString(5).equals(editTextEmail.getText().toString()) && cursorWoman.getString(6).equals(editTextPassword.getText().toString()))
+                    startActivity(WeatherActivity.class);
+                else
+                    builder.setTitle("ERROR!").setMessage("Your email or your password are incorrects");
+            }while(cursorWoman.moveToNext());
+        }
     }
 }
