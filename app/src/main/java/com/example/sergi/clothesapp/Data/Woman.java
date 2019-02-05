@@ -14,9 +14,12 @@ public class Woman extends Person {
     public Woman(String sex, String name, String surname, String dni, String email, String password, int height, boolean likeScarfHot,
                  boolean likeScarfWarm, boolean likeGloves, boolean likeHat, boolean likeTrackSuit, boolean likeAnorak,
                  boolean likeSuspenders, boolean likeFlipFlops, boolean likeSwimSuit, boolean likeLeggins, boolean likeSuit,
-                 boolean likeSkirt, boolean likeLongSocks, boolean likeBoots, boolean likeDress){
-        super(sex, name, surname, dni, email, password, height, likeScarfHot, likeScarfWarm, likeGloves, likeHat, likeTrackSuit,
-                likeAnorak, likeSuspenders, likeFlipFlops, likeSwimSuit, likeLeggins, likeSuit);
+                 boolean likeSkirt, boolean likeLongSocks, boolean likeBoots, boolean likeDress, boolean likeBlack, boolean likeWhite, boolean likeYellow,
+                 boolean likeRed, boolean likeBlue, boolean likeGreen, boolean likeSoft_blue, boolean likeGrey, boolean likeBrown, boolean likeSoft_brown,
+                 boolean likeSoft_green){
+        super(sex, name, surname, dni, email, password, height, likeScarfHot, likeScarfWarm, likeGloves, likeHat, likeTrackSuit, likeAnorak, likeSuspenders,
+                likeFlipFlops, likeSwimSuit, likeLeggins, likeSuit, likeBlack, likeWhite, likeYellow, likeRed, likeBlue, likeGreen, likeSoft_blue, likeGrey,
+                likeBrown, likeSoft_brown, likeSoft_green);
         this.likeSkirt=likeSkirt;
         this.likeLongSocks=likeLongSocks;
         this.likeBoots=likeBoots;

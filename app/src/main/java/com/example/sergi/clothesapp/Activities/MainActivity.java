@@ -41,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
         editTextEmail.setText(email);
         editTextPassword.setText(password);
         textViewSignUp.setOnTouchListener(new View.OnTouchListener() {
+
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public boolean onTouch(View view, MotionEvent motionEvent) {
                 startActivity(SignUpActivity.class);
-                return true;
+                return false;
             }
         });
 

@@ -27,14 +27,26 @@ public class Person {
     private boolean likeSwimSuit;
     private boolean likeLeggins;
     private boolean likeSuit;
-
+    private boolean likeBlack;
+    private boolean likeWhite;
+    private boolean likeYellow;
+    private boolean likeRed;
+    private boolean likeBlue;
+    private boolean likeGreen;
+    private boolean likeSoft_blue;
+    private boolean likeGrey;
+    private boolean likeBrown;
+    private boolean likeSoft_brown;
+    private boolean likeSoft_green;
 
     /**
      *Constructor of the class to inicialize the variables
      */
     public Person(String sex, String name, String surname, String dni, String email, String password, int height, boolean likeScarfHot,
                   boolean likeScarfWarm, boolean likeGloves, boolean likeHat, boolean likeTrackSuit, boolean likeAnorak, boolean likeSuspenders,
-                  boolean likeFlipFlops, boolean likeSwimSuit, boolean likeLeggins, boolean likeSuit){
+                  boolean likeFlipFlops, boolean likeSwimSuit, boolean likeLeggins, boolean likeSuit, boolean likeBlack, boolean likeWhite, boolean likeYellow,
+                  boolean likeRed, boolean likeBlue, boolean likeGreen, boolean likeSoft_blue, boolean likeGrey, boolean likeBrown, boolean likeSoft_brown,
+                  boolean likeSoft_green){
         this.sex=sex;
         this.name=name;
         this.surname=surname;
@@ -53,6 +65,17 @@ public class Person {
         this.likeSwimSuit=likeSwimSuit;
         this.likeLeggins=likeLeggins;
         this.likeSuit=likeSuit;
+        this.likeBlack=likeBlack;
+        this.likeWhite=likeWhite;
+        this.likeYellow=likeYellow;
+        this.likeRed=likeRed;
+        this.likeBlue=likeBlue;
+        this.likeGreen=likeGreen;
+        this.likeSoft_blue=likeSoft_blue;
+        this.likeGrey=likeGrey;
+        this.likeBrown=likeBrown;
+        this.likeSoft_brown=likeSoft_brown;
+        this.likeSoft_green=likeSoft_green;
     }
 
     //********************************GETTER'S AND SETTER'S*************************************************
@@ -200,5 +223,93 @@ public class Person {
 
     public void setLikeSuit(boolean likeSuit) {
         this.likeSuit = likeSuit;
+    }
+
+    public boolean isLikeBlack() {
+        return likeBlack;
+    }
+
+    public void setLikeBlack(boolean likeBlack) {
+        this.likeBlack = likeBlack;
+    }
+
+    public boolean isLikeWhite() {
+        return likeWhite;
+    }
+
+    public void setLikeWhite(boolean likeWhite) {
+        this.likeWhite = likeWhite;
+    }
+
+    public boolean isLikeYellow() {
+        return likeYellow;
+    }
+
+    public void setLikeYellow(boolean likeYellow) {
+        this.likeYellow = likeYellow;
+    }
+
+    public boolean isLikeRed() {
+        return likeRed;
+    }
+
+    public void setLikeRed(boolean likeRed) {
+        this.likeRed = likeRed;
+    }
+
+    public boolean isLikeBlue() {
+        return likeBlue;
+    }
+
+    public void setLikeBlue(boolean likeBlue) {
+        this.likeBlue = likeBlue;
+    }
+
+    public boolean isLikeGreen() {
+        return likeGreen;
+    }
+
+    public void setLikeGreen(boolean likeGreen) {
+        this.likeGreen = likeGreen;
+    }
+
+    public boolean isLikeSoft_blue() {
+        return likeSoft_blue;
+    }
+
+    public void setLikeSoft_blue(boolean likeSoft_blue) {
+        this.likeSoft_blue = likeSoft_blue;
+    }
+
+    public boolean isLikeGrey() {
+        return likeGrey;
+    }
+
+    public void setLikeGrey(boolean likeGrey) {
+        this.likeGrey = likeGrey;
+    }
+
+    public boolean isLikeBrown() {
+        return likeBrown;
+    }
+
+    public void setLikeBrown(boolean likeBrown) {
+        this.likeBrown = likeBrown;
+    }
+
+    public boolean isLikeSoft_brown() {
+        return likeSoft_brown;
+    }
+
+    public void setLikeSoft_brown(boolean likeSoft_brown) {
+        this.likeSoft_brown = likeSoft_brown;
+    }
+
+    public boolean isLikeSoft_green() {
+        return likeSoft_green;
+    }
+
+    public void setLikeSoft_green(boolean likeSoft_green) {
+        this.likeSoft_green = likeSoft_green;
     }
 }
