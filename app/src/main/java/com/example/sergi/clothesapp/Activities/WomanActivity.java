@@ -39,18 +39,18 @@ public class WomanActivity extends AppCompatActivity {
         values.put("Email", person.getEmail());
         values.put("Password", person.getPassword());
         values.put("Height", person.getHeight());
-        values.put("Scarf Hot", person.isLikeScarfHot());
-        values.put("Scarf Warm", person.isLikeScarfWarm());
+        values.put("ScarfHot", person.isLikeScarfHot());
+        values.put("ScarfWarm", person.isLikeScarfWarm());
         values.put("Gloves", person.isLikeGloves());
         values.put("Hat", person.isLikeHat());
         values.put("Anorak", person.isLikeAnorak());
         values.put("Suspenders", person.isLikeSuspenders());
-        values.put("Flip Flops", person.isLikeFlipFlops());
+        values.put("FlipFlops", person.isLikeFlipFlops());
         values.put("Swimsuit", person.isLikeSwimSuit());
         values.put("Leggins", person.isLikeLeggins());
         values.put("Suit", person.isLikeSuit());
         values.put("Skirt", ((Woman) person).isLikeSkirt());
-        values.put("Long Socks", ((Woman) person).isLikeLongSocks());
+        values.put("LongSocks", ((Woman) person).isLikeLongSocks());
         values.put("Boots", ((Woman) person).isLikeBoots());
         values.put("Dress", ((Woman) person).isLikeDress());
         values.put("Black", person.isLikeBlack());
@@ -59,11 +59,11 @@ public class WomanActivity extends AppCompatActivity {
         values.put("Red", person.isLikeRed());
         values.put("Blue", person.isLikeBlue());
         values.put("Green", person.isLikeGreen());
-        values.put("Soft Blue", person.isLikeSoft_blue());
+        values.put("SoftBlue", person.isLikeSoft_blue());
         values.put("Grey", person.isLikeGrey());
         values.put("Brown", person.isLikeBrown());
-        values.put("Soft Brown", person.isLikeSoft_brown());
-        values.put("Soft Green", person.isLikeSoft_green());
+        values.put("SoftBrown", person.isLikeSoft_brown());
+        values.put("SoftGreen", person.isLikeSoft_green());
 
         //We add the data into de database
         long primaryKey = db.insert("Woman", null, values);
