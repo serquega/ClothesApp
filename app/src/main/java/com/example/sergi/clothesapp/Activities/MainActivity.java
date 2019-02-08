@@ -3,7 +3,6 @@ package com.example.sergi.clothesapp.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.sergi.clothesapp.DATABASE.SQLiteDatabase;
 import com.example.sergi.clothesapp.R;
@@ -51,31 +49,17 @@ public class MainActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase admin = new SQLiteDatabase(getBaseContext());
-                android.database.sqlite.SQLiteDatabase db = admin.getWritableDatabase();
-                String queryMan1 = "SELECT Email FROM Man";
-                String queryMan2 = "SELECT Password FROM Man";
-                admin.
+                SQLiteDatabase dbAdmin = new SQLiteDatabase(getBaseContext());
+                dbAdmin.open();
+
                 //Check the checkbox
                 if(checkBox.isChecked()) {
                     savePreferences(getBaseContext(),"user email", editTextEmail.getText().toString());
                     savePreferences(getBaseContext(), "password", editTextPassword.getText().toString());
                 }
 
-                //Runs Database
-                Cursor cursorMan1 = db.rawQuery(queryMan1, null);
-                Cursor cursorMan2 = db.rawQuery(queryMan2, null);
+                //Check if user exists in our database
 
-                //Search into de database
-                if(cursorMan1.moveToFirst() && cursorMan2.moveToFirst()){
-                    do{
-                        if(cursorMan1.getString(5).equals(editTextEmail.getText().toString()) && cursorMan2.getString(6).equals(editTextPassword.getText().toString()))
-                            startActivity(WeatherActivity.class);
-                        else
-                            searchInWomanDatabase();
-                    }while(cursorMan1.moveToNext() && cursorMan2.moveToNext());
-                }else
-                    Toast.makeText(getBaseContext(), "There's no man inserted in your database", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -101,26 +85,5 @@ public class MainActivity extends AppCompatActivity {
         return preferences.getString(keyPref, "");
     }
 
-    //Search email and password in woman database
-    public void searchInWomanDatabase() {
-        SQLiteDatabase admin = new SQLiteDatabase(getBaseContext());
-        android.database.sqlite.SQLiteDatabase db = admin.getWritableDatabase();
-        String queryWoman1 = "SELECT Email FROM Woman";
-        String queryWoman2 = "SELECT Password FROM Woman";
 
-        //Runs Database
-        Cursor cursorWoman1 = db.rawQuery(queryWoman1, null);
-        Cursor cursorWoman2 = db.rawQuery(queryWoman2, null);
-
-        //Search into de database
-        if(cursorWoman1.moveToFirst() && cursorWoman2.moveToFirst()){
-            do{
-                if(cursorWoman1.getString(5).equals(editTextEmail.getText().toString()) && cursorWoman2.getString(6).equals(editTextPassword.getText().toString()))
-                    startActivity(WeatherActivity.class);
-                else
-                    Toast.makeText(getBaseContext(), "Email or password incorrects", Toast.LENGTH_SHORT).show();
-            }while(cursorWoman1.moveToNext() && cursorWoman2.moveToNext());
-        }else
-            Toast.makeText(getBaseContext(), "There's no woman inserted in your database", Toast.LENGTH_SHORT).show();
-    }
 }

@@ -25,7 +25,7 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             "FlipFlops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," + "Suit TINYINT(1)," + "ThermalTShirt TINYINT(1)," +
             "Black TINYINT(1)," + "White TINYINT(1)," + "Yellow TINYINT(1)," + "Red TINYINT(1)," + "Blue TINYINT(1)," + "Green TINYINT(1)," +
             "SoftBlue TINYINT(1)," + "Grey TINYINT(1)," + "Brown TINYINT(1)," + "SoftBrown TINYINT(1)," + "SoftGreen TINYINT(1)"+")";
-    private static final String DATABSE_CREATION_WOMAN = "create table "+TABLE_NAME_WOMAN+" ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
+    private static final String DATABASE_CREATION_WOMAN = "create table "+TABLE_NAME_WOMAN+" ( " + "Sex VARCHAR(1)," + "Name VARCHAR(15)," +
             "Surname VARCHAR(30)," + "Dni CHAR(9) PRIMARY KEY," + "Email CHAR(20)," + "Password CHAR(20)," + "Height INT(3)," +
             "ScarfHot TINYINT(1)," + "ScarfWarm TINYINT(1)," + "Gloves TINYINT(1)," + "Hat TINYINT(1)," + "Tracksuit TINYINT(1)," +
             "Anorak TINYINT(1)," + "Suspenders TINYINT(1)," + "FlipFlops TINYINT(1)," + "Swimsuit TINYINT(1)," + "Leggins TINYINT(1)," +
@@ -40,14 +40,16 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(android.database.sqlite.SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATION_MAN);
-        db.execSQL(DATABSE_CREATION_WOMAN);
+        db.execSQL(DATABASE_CREATION_WOMAN);
     }
 
     @Override
     public void onUpgrade(android.database.sqlite.SQLiteDatabase db, int oldVersion, int newVersion) {
-        /*if(oldVersion < newVersion) {
-            onCreate(db);
-        }*/
+        String updateSqlMan = "drop table if exists "+TABLE_NAME_MAN;
+        String updateSqlWoman = "drop table if exists "+TABLE_NAME_WOMAN;
+        db.execSQL(updateSqlMan);
+        db.execSQL(updateSqlWoman);
+        onCreate(db);
     }
 
     //Method to check a login in the databse
@@ -174,4 +176,9 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             db.close();
         }
     }
+
+    /*Updates person information
+    public void updatePersonData() {
+        android.database.sqlite.SQLiteDatabase db = this.getWritableDatabase();
+    }*/
 }
