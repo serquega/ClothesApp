@@ -2,8 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/White">
 
     <TextView
@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="220dp"
         android:text="@string/textViewEmail"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="304dp"
         android:text="@string/textViewpassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,8 +30,8 @@
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,8 +41,8 @@
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="284dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -51,31 +51,31 @@
     <TextView
         android:id="@+id/textViewSignup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/Blue"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="444dp"
+        android:layout_height="68dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="480dp"
         android:text="@string/signUp"
+        android:textColor="@color/Blue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSignIn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="356dp"
         android:text="@string/signIn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="wrap_content" />/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />/>
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="412dp"
         android:text="@string/checkBoxMainActivity"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />/>
