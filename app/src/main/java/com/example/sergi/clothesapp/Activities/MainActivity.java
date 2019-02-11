@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sergi.clothesapp.DATABASE.SQLiteDatabase;
 import com.example.sergi.clothesapp.R;
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonSignIn=(Button) findViewById(R.id.buttonSignIn);
         textViewSignUp=(TextView) findViewById(R.id.textViewSignup);
-        String email = readPreferences(getBaseContext(), "user email");
-        String password = readPreferences(getBaseContext(), "password");
+        String email = readPreferences(getApplicationContext(), "user email");
+        String password = readPreferences(getApplicationContext(), "password");
         editTextEmail.setText(email);
         editTextPassword.setText(password);
         textViewSignUp.setOnTouchListener(new View.OnTouchListener() {
@@ -49,17 +50,19 @@ public class MainActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase dbAdmin = new SQLiteDatabase(getBaseContext());
-                dbAdmin.open();
+                SQLiteDatabase db = new SQLiteDatabase(getApplicationContext());
 
                 //Check the checkbox
                 if(checkBox.isChecked()) {
-                    savePreferences(getBaseContext(),"user email", editTextEmail.getText().toString());
-                    savePreferences(getBaseContext(), "password", editTextPassword.getText().toString());
+                    savePreferences(getApplicationContext(),"user email", editTextEmail.getText().toString());
+                    savePreferences(getApplicationContext(), "password", editTextPassword.getText().toString());
                 }
 
-                //Check if user exists in our database
-
+                //Check a database login correct
+                if(db.loginDatabase(editTextEmail.getText().toString(), editTextPassword.getText().toString()) == 1)
+                    startActivity(WeatherActivity.class);
+                else
+                    Toast.makeText(getApplicationContext(), "Error, email or password incorrects", Toast.LENGTH_SHORT).show();
             }
         });
     }

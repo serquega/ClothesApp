@@ -52,7 +52,7 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //Method to check a login in the databse
+    //Method to check a login in the database
     //Returns 1 if the login is correct
     //Return 0 if the login was not correct
     public int loginDatabase(String email, String password) {
@@ -62,8 +62,8 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             Cursor cursorMan = null;
             Cursor cursorWoman = null;
             android.database.sqlite.SQLiteDatabase db = this.getWritableDatabase();
-            cursorMan = db.rawQuery("select * from Man where email =" + "\""+ email + "\""+" and password="+ "\""+ password + "\"", null);
-            cursorWoman = db.rawQuery("select * from Woman where email =" + "\""+ email + "\""+" and password="+ "\""+ password + "\"", null);
+            cursorMan = db.rawQuery("select * from" +TABLE_NAME_MAN+ "where email =" + "\""+ email + "\""+" and password="+ "\""+ password + "\"", null);
+            cursorWoman = db.rawQuery("select * from" +TABLE_NAME_WOMAN+ "where email =" + "\""+ email + "\""+" and password="+ "\""+ password + "\"", null);
             cursorMan.moveToFirst();
             cursorWoman.moveToFirst();
             j = cursorWoman.getCount();
@@ -116,7 +116,7 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             values.put("SoftGreen", person.isLikeSoft_green());
 
             //We add the data into de database
-            db.insert("Man", null, values);
+            db.insert(TABLE_NAME_MAN, null, values);
 
             //We close the database
             db.close();
@@ -157,7 +157,7 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             values.put("SoftGreen", person.isLikeSoft_green());
 
             //We add the data into de database
-            db.insert("Woman", null, values);
+            db.insert(TABLE_NAME_WOMAN, null, values);
 
             //We close de database
             db.close();
@@ -175,6 +175,11 @@ public class SQLiteDatabase extends SQLiteOpenHelper {
             db.execSQL(deleteSqlWoman);
             db.close();
         }
+    }
+
+    public void openDatabase() {
+        android.database.sqlite.SQLiteDatabase db = this.getWritableDatabase();
+
     }
 
     /*Updates person information
