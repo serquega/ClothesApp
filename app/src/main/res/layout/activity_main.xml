@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -53,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="68dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="524dp"
         android:text="@string/signUp"
         android:textColor="@color/Blue"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,7 +64,7 @@
         android:id="@+id/buttonSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="356dp"
         android:text="@string/signIn"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -79,5 +80,14 @@
         android:text="@string/checkBoxMainActivity"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignInButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="459dp" />
 
 </android.support.constraint.ConstraintLayout>

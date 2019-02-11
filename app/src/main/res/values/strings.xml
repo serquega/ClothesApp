@@ -24,4 +24,5 @@
     <string name="Woman">Woman</string>
     <string name="title_activity_weather">WeatherActivity</string>
     <string name="checkBoxMainActivity">Remember e-mail and password</string>
+    <string name="title_activity_google_sign_in">GoogleSignInActivity</string>
 </resources>

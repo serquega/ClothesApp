@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sergi.clothesapp">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/clothes"
@@ -9,6 +11,10 @@
         android:roundIcon="@mipmap/clothes"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activities.GoogleSignInActivity"
+            android:label="@string/title_activity_google_sign_in"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
@@ -32,7 +38,7 @@
         <activity
             android:name=".Activities.WeatherActivity"
             android:label="@string/title_activity_weather"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
