@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CheckBox checkBox;
     private SignInButton signInButton;
     private static GoogleSignInClient mGoogleSignInClient;
-    private static String PREFS_KEY = "mypreferences";
+    private static final String PREFS_KEY = "mypreferences";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override

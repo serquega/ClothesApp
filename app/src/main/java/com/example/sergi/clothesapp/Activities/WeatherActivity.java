@@ -1,13 +1,12 @@
 package com.example.sergi.clothesapp.Activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.Toast;
 
 import com.example.sergi.clothesapp.R;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -17,15 +16,20 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        GoogleSignInAccount objectAccount = null;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        //We get the user information from the intent
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+            objectAccount = (GoogleSignInAccount) extras.get("userAccount");
+        else
+            Toast.makeText(getApplicationContext(), "There is not any user signed in", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+    }
 }
